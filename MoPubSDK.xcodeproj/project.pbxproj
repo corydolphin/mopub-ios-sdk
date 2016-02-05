@@ -11,7 +11,7 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 570A001A19D61CF600065388 /* Build configuration list for PBXAggregateTarget "Fabric" */;
 			buildPhases = (
-				570A002919D61D6900065388 /* ShellScript */,
+				570A002919D61D6900065388 /* Run Script */,
 			);
 			dependencies = (
 				57D322231BD98F1600ACF21E /* PBXTargetDependency */,
@@ -1913,6 +1913,7 @@
 		4AFE5787191C4C5600A2CF82 /* FakeFBInterstitialAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeFBInterstitialAd.m; sourceTree = "<group>"; };
 		4AFF8A651A5F10740066DFD7 /* FBAdView+Specs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FBAdView+Specs.h"; sourceTree = "<group>"; };
 		4AFF8A661A5F10740066DFD7 /* FBAdView+Specs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FBAdView+Specs.m"; sourceTree = "<group>"; };
+		4B8CF35E1C65414500FA2791 /* MoPub.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = MoPub.modulemap; sourceTree = "<group>"; };
 		570002D91A2C3C9600AEC4A3 /* MRExpandModalViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MRExpandModalViewControllerSpec.mm; sourceTree = "<group>"; };
 		57098CDB1A2458D00005A153 /* NSHTTPURLResponse+MPAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSHTTPURLResponse+MPAdditions.h"; sourceTree = "<group>"; };
 		57098CDC1A2458D00005A153 /* NSHTTPURLResponse+MPAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSHTTPURLResponse+MPAdditions.m"; sourceTree = "<group>"; };
@@ -3972,6 +3973,7 @@
 				57401A421B7AAEF0000EEA64 /* MPDAAIcon.png */,
 				57401A431B7AAEF0000EEA64 /* MPDAAIcon@2x.png */,
 				57401A441B7AAEF0000EEA64 /* MPDAAIcon@3x.png */,
+				4B8CF35E1C65414500FA2791 /* MoPub.modulemap */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -5365,13 +5367,14 @@
 			shellPath = /bin/sh;
 			shellScript = "sh Scripts/build_scripts/fabric_build_framework.sh";
 		};
-		570A002919D61D6900065388 /* ShellScript */ = {
+		570A002919D61D6900065388 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -7885,6 +7888,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				DEFINES_MODULE = YES;
 				DSTROOT = /tmp/MoPubSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -7892,6 +7896,7 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MODULEMAP_FILE = Resources/Mopub.modulemap;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = MoPubSDK;
@@ -7903,6 +7908,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				DEFINES_MODULE = YES;
 				DSTROOT = /tmp/MoPubSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -7910,6 +7916,7 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MODULEMAP_FILE = Resources/Mopub.modulemap;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = MoPubSDK;
 				SKIP_INSTALL = YES;
